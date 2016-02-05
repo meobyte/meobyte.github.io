@@ -1,13 +1,3 @@
-/* ==========================================================================
-   Page layout
-   ========================================================================== */
-
-body {
-	background-color: $bodycolor;
-	font-family: $base-font;
-	color: $text-color;
-}
-
 /*
    Header
    ========================================================================== */
@@ -15,7 +5,7 @@ body {
 .navigation-wrapper {
 	@include container;
 	padding: 2em 0 1em;
-	font-family: $heading-font;
+	font-family: $font-sans;
 	font-weight: 700;
 	text-transform: uppercase;
 	@include clearfix;
@@ -26,15 +16,15 @@ body {
 	@include grid(12,10);
 	@include prefix(12,1);
 	@include suffix(12,1);
-	margin-bottom: 1em;
+	margin-bottom: emRhythm(1, $ms-up2);
 	float: none;
 	display: block;
-	@include font-rem(24);
+	@include setType(6, $ms-up2);
 	@media #{$small} {
 		@include grid(12,2);
 		@include prefix(12,0.5);
 		@include suffix(12,0.5);
-		@include font-rem(16);
+		@include setType(5, $ms-up1);
 	}
 	@media #{$x-large} {
 		@include grid(12,1.5);
@@ -47,7 +37,6 @@ body {
 	@include grid(12,10);
 	@include prefix(12,1);
 	@include suffix(12,1);
-	margin-bottom: 1em;
 	float: none;
 	display: block;
 	@media #{$small} {
@@ -69,7 +58,8 @@ body {
 		list-style-type: none;
 		border-bottom: 1px solid lighten($black,80);
 		border-bottom: 1px solid fade($black,10);
-		@include font-rem(16);
+		margin-bottom: emRhythm(1, $ms-up1);
+		@include setType(3);
 		&:last-child {
 			border-bottom: 0 solid transparent;
 		}
@@ -78,6 +68,7 @@ body {
 			margin-right: 25px;
 			white-space: nowrap;
 			border-bottom: 0 solid transparent;
+			@include setType(3);
 		}
 		a {
 			display: block;
@@ -265,28 +256,15 @@ $button-size: 1.5rem;
 	@media #{$x-large} {
 		@include grid(12,5);
 	}
-	h3 {
-		margin: 0;
-		padding-bottom: .5em;
-		@include font-rem(28);
+	h1 {
+		margin-bottom: emRhythm(1, $ms-down1); //[1]
+	}
+	h2 {
+		margin-bottom: emRhythm(1, $ms-down1); //[1]
 		border-bottom: 1px solid lighten($black,70);
+		@include rhythmBorderBottom(1px, 1, $ms-down1); //[2]
 	}
-	article {
-		h2 {
-			margin-bottom: 4px;
-			@include font-rem(20);
-			&.link-post {
-				margin-bottom: 0px + $doc-line-height;
-				margin-bottom: 0rem + ($doc-line-height / $doc-font-size);
-			}
-		}
-		p {
-			@include font-rem(14);
-		}
-		p+p {
-			text-indent: 0;
-		}
-	}
+
 }
 
 /* Large feature header image */
@@ -410,7 +388,7 @@ $button-size: 1.5rem;
 		.bio-photo,
 		p,
 		.author-social {
-			max-width: 150px;
+			max-width: 155px;
 		}
 	}
 	@media #{$x-large} {
@@ -440,19 +418,8 @@ $button-size: 1.5rem;
 		.bio-photo,
 		p,
 		.author-social {
-			max-width: 150px;
+			max-width: 155px;
 		}
-	}
-}
-
-/* Post content wrapper */
-.article-wrap {
-	// Dotted line underlines for links
-	p > a,
-	p > em > a,
-	p > strong > a,
-	li > a {
-		text-decoration: underline;
 	}
 }
 

@@ -7,7 +7,7 @@
 {% include _head.html %}
 </head>
 
-<body class="page">
+<body class="page typeset">
 
 {% include _browser-upgrade.html %}
 
@@ -33,14 +33,12 @@
     {% include _author-bio.html %}
   </div>
   <article class="page">
-    <h1>{{ page.title }}</h1>
-    <div class="article-wrap">
+    <h1 class="main-heading">{{ page.title }}</h1>
       {{ content }}
       {% if page.share != false %}
         <hr />
         {% include _social-share.html %}
       {% endif %}
-    </div><!-- /.article-wrap -->
     {% if site.owner.disqus-shortname and page.comments == true %}
       <section id="disqus_thread"></section><!-- /#disqus_thread -->
     {% endif %}

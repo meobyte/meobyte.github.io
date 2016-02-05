@@ -1,6 +1,19 @@
 /* ==========================================================================
    Sass variables
    ========================================================================== */
+// ---------------------
+// Settings for Typesettings
+// ---------------------
+$font-sans: 'PT Sans Narrow', sans-serif;
+$font-serif: 'PT Serif', serif;
+$font-mono: 'Source Code Pro', Monaco, "Courier New", monospace;
+$text-color: #333;
+$base-vertical-unit: 6px;
+$base-line-multi: 5;
+$base-font-size: 17px;
+$ms-ratio: 1.414;
+$paragraph-indent: false;
+$paragraph-justify: false;
 
 /*
    Typography
